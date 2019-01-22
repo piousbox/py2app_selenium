@@ -11,7 +11,7 @@ from setuptools import setup
 APP = ['selenium_test.py']
 # APP = ['trash/Sandwich.py']
 
-DATA_FILES = ['chromedriver']
+DATA_FILES = ['chromedriver', 'venv']
 OPTIONS = {}
 
 setup(

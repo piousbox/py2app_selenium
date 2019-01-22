@@ -1,8 +1,12 @@
 
 import time
+import sys
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+import logging
+logging.error("+++ pythong version")
+logging.error(sys.version_info[0])
 
 #
 # driver
