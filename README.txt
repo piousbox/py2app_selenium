@@ -19,9 +19,10 @@ For debugging:
  python setup.py py2app -A
 
 For production:
+
  python setup.py py2app
 
 == Run ==
-
- ./dist/{your app name}.app/Contents/MacOS/{your app name}
+ . venv/bin/activate
  ./dist/selenium_test.app/Contents/MacOS/selenium_test
+
