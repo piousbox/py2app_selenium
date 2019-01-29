@@ -5,7 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 import logging
-logging.error("+++ pythong version")
+logging.error("+++ python version")
 logging.error(sys.version_info[0])
 
 #
@@ -39,18 +39,29 @@ def btnCb():
 # tkinter
 #
 import tkinter
-top = tkinter.Tk()
+# from tkinter import *
+root = tkinter.Tk()
 
-text = tkinter.Text(top, height=2, width=30)
-text.pack()
-text.insert(tkinter.END, "Select Environment")
+## select environment
+root.text = tkinter.Text(root.master, height=2, width=30)
+root.text.insert(tkinter.END, "Select Environment")
+root.text.grid(row=0, column=0)
 
-listbox = tkinter.Listbox(top)
-listbox.pack()
-listbox.insert(tkinter.END, "Staging")
-listbox.insert(tkinter.END, "QA")
-listbox.insert(tkinter.END, "localhost:3003")
+root.listbox = tkinter.Listbox(root.master)
+root.listbox.insert(tkinter.END, "Staging")
+root.listbox.insert(tkinter.END, "QA")
+root.listbox.grid(row=1, column=0)
 
-b = tkinter.Button(top, text="Ok", command=btnCb)
-b.pack()
-top.mainloop()
+root.routing_label = tkinter.Label(root.master, text="Routing Number")
+root.routing_label.grid(row=0, column=1)
+root.routing_entry = tkinter.Entry(root)
+root.routing_entry.grid(row=1, column=2)
+root.state_label = tkinter.Label(root.master, text="State")
+root.state_label.grid(row=1, column=1)
+root.state_entry = tkinter.Entry(root)
+root.state_entry.grid(row=1, column=2)
+
+# b = tkinter.Button(root, text="Run", command=btnCb)
+# b.pack()
+
+root.mainloop()
