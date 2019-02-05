@@ -3,20 +3,22 @@ import time
 import sys
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import random
 
 import logging
 logging.error("+++ python version")
 logging.error(sys.version_info[0])
 
-import names
+firstNames = [ 'Abba', 'Becka', 'Crista', 'Dasha', 'Eva', 'Ginni' ]
+lastNames = [ 'X-Ray', 'Yerba', 'Zerro' ]
 
 #
 # variables
 #
 email = 'victor+%s@creditninja.com' % round(time.time())
 state = 'Utah'
-firstName = names.get_first_name()
-lastName = names.get_last_name()
+firstName = "%s%s" %( random.choice(firstNames), round(random.random()*100) )
+lastName = "%s%s" %( random.choice(lastNames), round(random.random()*100) )
 ssn = round(time.time())
 
 #
@@ -25,7 +27,8 @@ ssn = round(time.time())
 def btnCb():
 
     driver = webdriver.Chrome('./chromedriver')  # Optional argument, if not specified will search path.
-    driver.get('http://localhost:3003')
+    # driver.get('http://localhost:3003')
+    driver.get('https://qa.creditninja.com')
 
     #
     # page 1
