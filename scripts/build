@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -x
+
+. venv/bin/activate
+rm -rf dist/ build/
+python setup.py py2app
+
+echo 'ok'
